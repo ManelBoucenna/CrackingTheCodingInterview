@@ -1,3 +1,8 @@
 Stacks:
 1- LIFO: last-in-first-out
 2- Are often used in recursive algorithms.
+
+
+Queues:
+1- FIFO: first-in-first-out
+2- Are used as cache, in breadth-first search (recherche en largeur) to store each node and its adjacent in order to process it

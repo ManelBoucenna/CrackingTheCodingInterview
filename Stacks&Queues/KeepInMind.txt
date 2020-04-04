@@ -1,0 +1,3 @@
+Stacks:
+1- LIFO: last-in-first-out
+2- Are often used in recursive algorithms.

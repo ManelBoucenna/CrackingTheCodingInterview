@@ -1,4 +1,4 @@
-# Not available in python because we don't have to predefine size
+# Not applicable in python because we don't have to predefine size
 class Node:
     def __init__(self, dataval=None):
         self.dataval = dataval

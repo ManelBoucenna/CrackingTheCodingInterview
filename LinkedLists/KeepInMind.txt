@@ -1,0 +1,14 @@
+Notes:
+1-Linked lists are used when:
+  a- Don't know how many items you have
+  b- Don't need random access to an element (using index)
+  c- Constant insert/delete time (anywhere in the linked list thanks to head but not at a specific position in the linked list it becomes O(n))
+2- To delete middle node (eg.: c) in Linked List having only access to it (c):
+  a-  a->b->(c)->d->e
+  b-  a->b->(d)->d->e
+  c-  a->b->(d)->e
+3- To return Kth element from the end and we don't have the size of list, we use two pointers separated by k spaces.
+4- To check palindrome we can:
+  a- Store in an array then compare
+  b- Reverse list and compare
+  c- Store in a string than reverse it and compare it

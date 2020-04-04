@@ -1,6 +1,12 @@
 Stacks:
 1- LIFO: last-in-first-out
 2- Are often used in recursive algorithms.
+3- To find the min of a stack we use a data structure where each node keep the value of the min before it.
+  eg:
+    data: 1 -> 2 -> -1 -> 5 (top)
+    next: 2-> -1-> 5-> None
+    min:  1 -> 1-> -1 -> -1
+    
 
 
 Queues:

@@ -1,0 +1,4 @@
+1- A heap is used as a queue where the min (or max if max heap) is always accessed in O(1) time.  
+   If the min (which is always at index 0 is popped off, then the next smallest takes its place. 
+2- The difference between Min-Heap and a Sorted array is that inserting an element to a sorted array takes O(n) time, 
+   which only takes O(logn) time for a heap. Same goes for deletion.

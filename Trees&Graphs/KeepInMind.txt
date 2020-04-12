@@ -2,3 +2,13 @@
    If the min (which is always at index 0 is popped off, then the next smallest takes its place. 
 2- The difference between Min-Heap and a Sorted array is that inserting an element to a sorted array takes O(n) time, 
    which only takes O(logn) time for a heap. Same goes for deletion.
+3- Depth-First Search (DFS):
+   a- Preffered if we want to visit every node in the graph, ex: game or puzzle problems .We make a decision, then explore all                 
+      paths through this decision. And if this decision leads to win situation, we stop. 
+   b- Simpler to implement
+4- Breadth-first Search (BFS):
+   a- Good to find the shortest path,
+   b- Uses queues
+5- Bidirectional Search:
+   a- In traditional BFS O(k^d), k: # nodes per level d
+   b- In Bi O(k^(d/2))

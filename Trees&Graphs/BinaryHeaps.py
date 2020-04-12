@@ -7,21 +7,6 @@ class BinaryHeap:
         self.heap.append(data)
         self.size +=1
         self.heapifyUp()
-    def get_min(self, root):
-        if (self.size == 0 ):
-            print("The heap is empty.")
-        else:
-            print("Min value is:", self.heapq[0])
-            return self.heapq[0]
-    def extract_min(self, root):
-        if (self.size == 0 ):
-            print("The heap is empty.")
-        else:
-            item = self.heapq[0]
-            self.heapq[0]=self.heapq[self.size-1]
-            self.size -=1
-            self.heapifyDown();
-            return item
     #Helpers
     #Magic formula:
         # from a node in level i
@@ -54,6 +39,23 @@ class BinaryHeap:
         temp = self.heap[idx1]
         self.heap[idx1]=self.heap[idx2]
         self.heap[idx2]=temp
+        
+    def get_min(self):
+        if (self.size == 0 ):
+            print("The heap is empty.")
+        else:
+            print("Min value is:", self.heap[0])
+            return self.heap[0]
+    def extract_min(self):
+        if (self.size == 0 ):
+            print("The heap is empty.")
+        else:
+            item = self.heap[0]
+            self.heap[0]=self.heap[self.size-1]
+            self.heap=self.heap[:self.size-1]
+            self.size -=1
+            self.heapifyDown();
+            return item
     def heapifyDown(self):
         pass
     def heapifyUp(self):
@@ -64,11 +66,24 @@ class BinaryHeap:
     def heapifyDown(self):
         index = 0
         while self.hasLeftChild(index):
-            #TODO
+            smallerChildIndex = self.getLeftChildIndex(index)
+            if (self.hasRightChild(index) and self.getRightChild(index)<self.getLeftChild(index)):
+                smallerChildIndex = self.getRightChildIndex(index)
+            if (self.heap[index]<self.heap[smallerChildIndex]):
+                break
+            else:
+                self.swap(index, smallerChildIndex)
+            index = smallerChildIndex
+        
+            
+
+
 
 myHeap = BinaryHeap()
 myHeap.insert(10)
 myHeap.insert(15)
 myHeap.insert(20)
 myHeap.insert(17)
-myHeap.insert(8)
+myHeap.insert(25)
+
+myHeap.extract_min()

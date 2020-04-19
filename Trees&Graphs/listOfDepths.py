@@ -17,6 +17,12 @@ class SLinkedList:
             laste = laste.nextval
         laste.nextval=NewNode     
         
+    def listprint(self):
+        printval = self.headval
+        while printval is not None:
+            print (printval.dataval)
+            printval = printval.nextval
+        
         
 class Node:
     def __init__(self, data=None):
@@ -72,4 +78,6 @@ myTree.insert(25)
 myTree.insert(75)
 myTree.insert(15)
 myTree.insert(35)
-myTree.listOfDepth(root)
+
+dico = myTree.listOfDepth(root)
+print(dico[1].listprint())

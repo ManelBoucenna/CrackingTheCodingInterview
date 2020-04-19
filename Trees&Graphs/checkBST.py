@@ -4,10 +4,10 @@ class Node:
         self.data = data
         self.left = None
         self.right = None
+        
 class BinaryTree:
     def __init__(self, root=None):
         self.root = root
-        self.isBST = True
         
     def insert(self,data, root = None):
         if (root is None):
@@ -25,50 +25,29 @@ class BinaryTree:
             else:
                 self.insert(data,currentNode.right)
     def checkBinarySubtree(self, node, min, max):
-        if (node.data>min) and (node.data<max):  
-            if (node.left is not None) and (node.right is not None):
-                if (node.right.data > node.data) and (node.left.data < node.data):
-                    self.isBST = True
-                    return node.data
-                else: 
-                    self.isBST = False   
-                    print("It is not a BST.")
-                    return min,max
-            elif node.left is None:
-                if node.right.data > node.data:
-                    self.isBST = True
-                    return node.data
-                else: 
-                    self.isBST = False   
-                    print("It is not a BST.")
-                    return min,max
-            elif node.right is None:
-                if node.left.data < node.data:
-                    self.isBST = True
-                    return node.data
-                else: 
-                    self.isBST = False   
-                    print("It is not a BST.")
-                    return min,max
-                
+            if (node.data > min) and (node.data<max):
+                return node.data
+            else: 
+                raise Exception('This is not a binary tree.')
                 
     def isBinarySearchTree(self, root, min = -math.inf, max = math.inf ):
         currentNode = root
-        if (currentNode is not None) and (self.isBST is True):
+        if (currentNode is not None):
             temp = self.checkBinarySubtree(currentNode, min, max)
             if (currentNode.left is not None):
                 self.isBinarySearchTree(currentNode.left,min, temp)
             if (currentNode.right is not None):
                 self.isBinarySearchTree(currentNode.right, temp, max)
-        return self.isBST
         
 
 
 root = Node(45)
 myTree = BinaryTree(root)
-myTree.insert(25)
-myTree.insert(75)
-myTree.insert(15)
-myTree.insert(35)
+root.left = Node(20)
+root.right = Node(55)
+root.left.left = Node(14)
+root.left.right = Node(120)
+root.right.left = Node(35)
+root.right.right = Node(75)
 
 myTree.isBinarySearchTree(root)

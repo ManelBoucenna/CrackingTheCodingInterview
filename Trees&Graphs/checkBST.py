@@ -31,6 +31,8 @@ class BinaryTree:
                 raise Exception('This is not a binary tree.')
                 
     def isBinarySearchTree(self, root, min = -math.inf, max = math.inf ):
+        #Time Complexity: O(n)
+        # Space Complexity: O(log N)
         currentNode = root
         if (currentNode is not None):
             temp = self.checkBinarySubtree(currentNode, min, max)

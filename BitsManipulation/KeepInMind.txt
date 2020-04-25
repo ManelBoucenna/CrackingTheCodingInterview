@@ -1,0 +1,5 @@
+1- Negative numbers = ( 1 sign bit) + (complementaty bits)
+  a- complementary bit in K bits= invert bit of the abs(number) + 1. Ex: comp(3) in 4 bits= ~0011 +1 = 1100+1 = 1101
+  b- -3 in 5 bits= (1) + (1101)
+2- Arithmetic Shift is division by 2. We keep the sign
+3- Logical right shift is classic shift.
